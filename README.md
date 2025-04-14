@@ -14,7 +14,7 @@ Redis (Caching)
 AWS EKS (Kubernetes)
 Helm (Monitoring using grafana and prometheus
 
-| Tech stack    | Installation |
-| -------- | ------- |
-| Jenkins Master | aaa | 
+| Tech stack    | 
+| -------- | 
+| Jenkins Master |
 
