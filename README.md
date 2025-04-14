@@ -2,6 +2,8 @@
 
 ![image_alt](https://github.com/laidevopslearning/End-To-End-CICD-Project/blob/cb73b031bdaa1f8628153c3af9d5ca8e4425e3b0/Flow.png)
 
+![image_alt] (https://github.com/laidevopslearning/End-To-End-CICD-Project/blob/40aeaeead6bc2cd340aaf7cfa67957a91bd39090/Resource.png)
+
 ## Information
 - GitHub (Code)
 - Docker (Containerization)
