@@ -14,8 +14,8 @@ Redis (Caching)
 AWS EKS (Kubernetes)
 Helm (Monitoring using grafana and prometheus
 
-# Installation Step
- Jenkins Master 
+| Installation Step |
+|Jenkins Master | 
  eksctl 
  Argocd 
  Jenkins-Worker Setup 
