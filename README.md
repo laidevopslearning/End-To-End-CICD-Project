@@ -31,13 +31,13 @@
 - <b> Create 1 Master machine on AWS with 2CPU, 8GB of RAM (t2.large) and 29 GB of storage and install Docker on it.
 
 
-#Update
-sudo apt-get update
-sudo apt-get install docker.io docker-compose-v2 -y
-sudo chmod 777 /var/run/docker.sock
-#Java Installation
-sudo apt update
-sudo apt install fontconfig openjdk-17-jre -y
+# Update
+- sudo apt-get update
+- sudo apt-get install docker.io docker-compose-v2 -y
+- sudo chmod 777 /var/run/docker.sock
+# Java Installation
+- sudo apt update
+- sudo apt install fontconfig openjdk-17-jre -y
 #Jenkins Installation
 sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
   https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
