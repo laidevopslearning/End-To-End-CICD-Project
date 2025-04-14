@@ -14,8 +14,7 @@ Redis (Caching)
 AWS EKS (Kubernetes)
 Helm (Monitoring using grafana and prometheus
 
-| Tech stack 
-| --------
+# Installation Step
 | Jenkins Master 
 | eksctl 
 | Argocd 
@@ -25,4 +24,4 @@ Helm (Monitoring using grafana and prometheus
 | Email Notification Setup 
 | Monitoring 
 | Clean Up 
-#
+
