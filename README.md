@@ -15,13 +15,13 @@ AWS EKS (Kubernetes)
 Helm (Monitoring using grafana and prometheus
 
 # Installation Step
-| Jenkins Master 
-| eksctl 
-| Argocd 
-| Jenkins-Worker Setup 
-| OWASP setup 
-| SonarQube 
-| Email Notification Setup 
-| Monitoring 
-| Clean Up 
+ Jenkins Master 
+ eksctl 
+ Argocd 
+ Jenkins-Worker Setup 
+ OWASP setup 
+ SonarQube 
+ Email Notification Setup 
+ Monitoring 
+ Clean Up 
 
