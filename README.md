@@ -2,7 +2,7 @@
 
 ![image_alt](https://github.com/laidevopslearning/End-To-End-CICD-Project/blob/cb73b031bdaa1f8628153c3af9d5ca8e4425e3b0/Flow.png)
 
-Information
+> Information
 GitHub (Code)
 Docker (Containerization)
 Jenkins (CI)
@@ -14,7 +14,15 @@ Redis (Caching)
 AWS EKS (Kubernetes)
 Helm (Monitoring using grafana and prometheus
 
-| Tech stack    | 
+| Installation  | 
 | -------- | 
 | Jenkins Master |
+| eksctl |
+| Argocd |
+| Jenkins-Worker Setup |
+| OWASP setup |
+| SonarQube |
+| Email Notification Setup |
+| Monitoring |
+| Clean Up |
 
