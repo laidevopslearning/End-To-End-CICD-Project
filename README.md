@@ -34,8 +34,8 @@
 - Create 1 Master machine on AWS with 2CPU, 8GB of RAM (t2.large) and 29 GB of storage and install Docker on it.
 
 # Installation command ( in EC2 )
+-Update
 ```
-# Update
 sudo apt-get update
 sudo apt-get install docker.io docker-compose-v2 -y
 sudo chmod 777 /var/run/docker.sock
