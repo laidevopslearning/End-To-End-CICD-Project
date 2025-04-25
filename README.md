@@ -34,7 +34,10 @@
 - Create 1 Master machine on AWS with 2CPU, 8GB of RAM (t2.large) and 29 GB of storage and install Docker on it.
 
 # Installation command ( in EC2 )
-.Update
--sudo apt-get update
--sudo apt-get install docker.io docker-compose-v2 -y
--sudo chmod 777 /var/run/docker.sock
+```bash
+sudo apt-get install wget apt-transport-https gnupg lsb-release -y
+wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add -
+echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | sudo tee -a /etc/apt/sources.list.d/trivy.list
+sudo apt-get update -y
+sudo apt-get install trivy -y
+```
