@@ -1,5 +1,5 @@
 # data "aws_ami" "os_image" {
-#     owners = ["863518438392"]
+#     owners = ["863518438xxx"]
 #     most_recent = true
 #     filter {
 #       name = "state"
@@ -13,7 +13,7 @@
 
 resource "aws_key_pair" "key-name" {
   key_name   = "id_rsa"
-  public_key = file("/Users/lai/Desktop/Lai_LAB/mega-project/.ssh/id_rsa.pub")
+  public_key = file("path/.ssh/id_rsa.pub")
 }
 
 resource "aws_default_vpc" "default" {
