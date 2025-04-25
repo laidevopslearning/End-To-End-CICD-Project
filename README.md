@@ -33,7 +33,7 @@
 # Create by using Terraform code 
 - Create 1 Master machine on AWS with 2CPU, 8GB of RAM (t2.large) and 29 GB of storage and install Docker on it.
 
-# Installation command ( in EC2 )
+# Installation via terraform ( in EC2 )
 -Update
 ```
 sudo apt-get update
@@ -63,7 +63,6 @@ unzip awscliv2.zip
 sudo ./aws/install 
 aws configure
 ```
-
 -Kubectl installation
 ```
 curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/kubectl
@@ -71,7 +70,6 @@ chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin
 kubectl version --short --client
 ```
-
 -Eksctl install
 ```
 curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
@@ -85,9 +83,54 @@ echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main |
 sudo apt-get update -y
 sudo apt-get install trivy -y
 ```
-
 -SonarQ install
 ```
 docker run -itd --name SonarQube-Server -p 9000:9000 sonarqube:lts-community
 ```
 
+
+# Cluster creation and CD installation
+
+-Cluster create
+```
+eksctl create cluster --name=wanderlust \
+                    --region=ap-southeast-1 \
+                    --version=1.30 \
+                    --without-nodegroup
+```
+
+-oidc install 
+```
+eksctl utils associate-iam-oidc-provider \
+  --region ap-southeast-1 \
+  --cluster wanderlust \
+  --approve
+```
+
+-Cluster Node create
+```
+eksctl create nodegroup --cluster=wanderlust \
+                     --region=ap-southeast-1 \
+                     --name=wanderlust \
+                     --node-type=t2.large \
+                     --nodes=2 \
+                     --nodes-min=2 \
+                     --nodes-max=2 \
+                     --node-volume-size=29 \
+                     --ssh-access \
+                     --ssh-public-key=id_rsa
+```
+-Install ArgoCD
+```
+kubectl create namespace argocd
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+sudo curl --silent --location -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/download/v2.4.7/argocd-linux-amd64
+sudo chmod +x /usr/local/bin/argocd
+kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "NodePort"}}'
+kubectl get svc -n argocd
+```
+
+-ArgoCD  passwd
+```
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
+```
