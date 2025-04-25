@@ -31,7 +31,7 @@
 
 
 # Create by using Terraform code 
-- Create 1 Master machine on AWS with 2CPU, 8GB of RAM (t2.large) and 29 GB of storage and install Docker on it.
+- Create 1 Master machine on AWS with 2CPU, 8GB of RAM (t2.large) and 29 GB of storage and install Docker on it. Code as attached.
 
 # Installation via terraform ( in EC2 )
 -Update
